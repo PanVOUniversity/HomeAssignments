@@ -1,11 +1,15 @@
+/*Pan Vladimir st128934@student.spbu.ru
+  modified hello world
+*/
+
 #include <iostream>
+#include <string>
 
-using namespace std;
 
-void print(word[]){
-	cout << word[];
-	cin >> a[];
-	print(a[]);
+void print(std::string word){
+	cout << word;
+	cin >> word;
+	print(word);
 }
 
 	

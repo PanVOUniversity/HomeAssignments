@@ -4,10 +4,10 @@
 
 #include "header.h"
 #include <iostream>
-
+#include <string>
 
 int main(){
-	char word[]  = "world";
-	print(word[]);
+	std::string word  = "world";
+	print(word);
 }
 
