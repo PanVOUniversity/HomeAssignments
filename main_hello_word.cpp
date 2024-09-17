@@ -4,7 +4,7 @@
 
 #include "header.h"
 #include <iostream>
-#include "func.cpp"
+
 
 int main(){
 	char word[]  = "world";

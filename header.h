@@ -2,7 +2,7 @@
 #define HEADER_h
 
 
-void print(char word[]);
+void print();
 
 #endif
 
