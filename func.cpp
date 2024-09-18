@@ -7,8 +7,8 @@
 
 
 void print(std::string word){
-	cout << word;
-	cin >> word;
+	std::cout << word;
+	std::cin >> word;
 	print(word);
 }
 
