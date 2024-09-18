@@ -7,7 +7,7 @@
 
 
 void print(std::string word){
-	std::cout << word;
+	std::cout << "Hello, " << word << "\n";
 	std::cin >> word;
 	print(word);
 }

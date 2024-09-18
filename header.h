@@ -6,7 +6,6 @@
 #ifndef HEADER_h
 #define HEADER_h
 
-void print(std::string word);
+void print(std::string);
 
 #endif
-
