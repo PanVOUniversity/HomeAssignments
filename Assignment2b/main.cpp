@@ -2,44 +2,52 @@
 
 int main()
 	{
-		char *stack[100] = new char[100];
-		char operations[] = {"+","-","*","/"};
+		char array [100];
+		char& stack = array[0];
+		const char* operations[4] = {"+","-","*","/"};
 		
 		while (true)
 		{
-			for(k == 0, k<100, ++k)
+			
+			char s;
+			std::cin >> s;
+			stack += sizeof(array)/sizeof(array[0]);
+			for (int i=0; i<4; i++)
 			{
-				std::cin >> s;
-				for (i=0, i<4, i++)
+				if (*operations[i] == s)
+				{
+					int sum;
+					for (int j = 0; j < sizeof(stack)/ sizeof(stack);++j)
 					{
-						if (operations[i] == s)
-						{
-							int sum;
-							for (j = 0; i < sizeof(stack)/ sizeof(stack);++j)
-							{
-								if (i=0)
-								{ 
-									sum += stack[j] - 0;
-								}
-								else if (i = 1)
-								{
-									sum -= stack[j] - 0;
-								}
-								else if (i = 2)
-								{
-									sum *= stack[j] - 0;
-								}
-								else if (i = 3)
-								{
-									sum /= stack[j] - 0;
-								}
-							}
+						if (i=0)
+						{ 
+							sum += *stack[j] - 0;
 						}
-					}
-				else
-		{
+						else if (i = 1)
+						{
+							sum -= stack[j] - 0;
+						}
+						else if (i = 2)
+						{
+							sum *= stack[j] - 0;
+						}
+						else if (i = 3)
+						{
+							sum /= stack[j] - 0;
+						}
 					
-				}		
+					}
+					delete stack;
+					char& stack = array[0];
+					std::cout << array[0];
+
+				}
+			
+				else
+			}
+		
+					
+			
 										
 							break;
 	}	
