@@ -1,6 +1,6 @@
 - problem-a для контеста № 2
 - Сборка в makefile
-- запуск командой ./hello
+- запуск командой ./main
   
 # Assignment 1
 ## Author
