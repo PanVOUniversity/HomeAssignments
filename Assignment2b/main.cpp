@@ -1,78 +1,73 @@
+
 #include <iostream>
+#include <string>
+#include <cstdlib>  
 
-int main()
-	{
-		char *stack = new char [100];
-		const char* operations[4] = {"+","-","*","/"};
-		char s;
-		//for debug
-		char a;
-		std::cout << **operations;
-		//---------------
-		while (true)
-		{
-			std::cin >> s;
-			
-			//checking if the operator has been inputed
-			for (int i=0; i<4; i++)
-			{
-				if (operations[i][0] == s)
-				{
-					int sum = 0;
-					
-					//when operator has been defined
-					//back iterate massive
-					if (i=0)
-					{ 	
-						std::cout << "in 2st if"; //debug
-						while (*stack != NULL)
-						{
-							std::cout << "in while" << stack; //debug
-							sum += *stack - 0;
-							std::cin >> a;
-							--stack;	
-						}
-					}
-					else if (i == 1)
-					{
-						while (*stack != NULL)
-						{
-							sum -= *stack - 0;
-							--stack;	
-						}
-					}
-					else if (i == 2)
-					{
-						while (*stack != NULL)
-						{
-							sum *= *stack - 0;
-							--stack;
-						}
-					}
-					else if (i == 3)
-					{
-						while (*stack != NULL)
-						{
-							sum /= *stack - 0;
-							--stack;	
-						}
-					}
-					
-					delete[] stack;
-					char* stack = new char [100];
-					
-				}
-			
-			}
+int main() 
+{
+    const int maxSize = 100;
+    double* stack = new double[maxSize];
+    int top = -1;
 
-			// adding new element in array
-			*stack = s;
-			//going to next element
-			std::cout << *stack <<std::endl;
-			++ stack; 
-			std::cout << stack;
-			//for int i = 0, i < si
-		}	
-		
+    std::string input;
+    std::cout << "Enter input in Reverse Polish Notation: ";
+    std::getline(std::cin, input);
 
-	}	
+    std::string token;
+
+    for (size_t i = 0; i < input.size(); ++i) 
+    {
+        char c = input[i];
+
+        if (c == ' ') continue;
+
+        if (c == '+' || c == '-' || c == '*' || c == '/') 
+        {
+            if (top < 1) 
+            {
+                std::cout << "not enough operands for operation " << c << std::endl;
+                delete[] stack;
+                return 0;
+            }
+
+            double b = stack[top--];
+            double a = stack[top--];
+
+            double result = 0;
+            switch (c) 
+            {
+                case '+': result = a + b; break;
+                case '-': result = a - b; break;
+                case '*': result = a * b; break;
+                case '/': result = a / b; break;
+            }
+
+            stack[++top] = result;
+        } 
+        else if (isdigit(c) || c == '-') 
+        {
+            token.clear();
+            while (i < input.size() && (isdigit(input[i]) || input[i] == '.' || input[i] == '-')) 
+            {
+                token += input[i];
+                ++i;
+            }
+            --i;
+            stack[++top] = atof(token.c_str()); //string to double
+        }
+    }
+
+    if (top != 0) 
+    {
+        std::cout << "incorrect input" << std::endl;
+        delete[] stack;
+        return 0;
+    }
+
+    std::cout << "Result: " << stack[top] << std::endl;
+
+    delete[] stack;
+    return 0;
+}
+
+
