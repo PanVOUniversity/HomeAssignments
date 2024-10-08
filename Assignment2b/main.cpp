@@ -2,45 +2,77 @@
 
 int main()
 	{
-		char* stack = new char [100];
+		char *stack = new char [100];
 		const char* operations[4] = {"+","-","*","/"};
-		
+		char s;
+		//for debug
+		char a;
+		std::cout << **operations;
+		//---------------
 		while (true)
 		{
-			
-			char s;
 			std::cin >> s;
-			stack += 1;
+			
+			//checking if the operator has been inputed
 			for (int i=0; i<4; i++)
 			{
-				if (*operations[i] == s)
+				if (operations[i][0] == s)
 				{
 					int sum = 0;
-					do
-					{
-						if (i=0)
-						{ 
+					
+					//when operator has been defined
+					//back iterate massive
+					if (i=0)
+					{ 	
+						std::cout << "in 2st if"; //debug
+						while (*stack != NULL)
+						{
+							std::cout << "in while" << stack; //debug
 							sum += *stack - 0;
-						}
-						else if (i = 1)
-						{
-							sum -= *stack - 0;
-						}
-						else if (i = 2)
-						{
-							sum *= *stack - 0;
-						}
-						else if (i = 3)
-						{
-							sum /= *stack - 0;
+							std::cin >> a;
+							--stack;	
 						}
 					}
-					while(*stack != stack[-1]);
-	
-					delete stack;
+					else if (i == 1)
+					{
+						while (*stack != NULL)
+						{
+							sum -= *stack - 0;
+							--stack;	
+						}
+					}
+					else if (i == 2)
+					{
+						while (*stack != NULL)
+						{
+							sum *= *stack - 0;
+							--stack;
+						}
+					}
+					else if (i == 3)
+					{
+						while (*stack != NULL)
+						{
+							sum /= *stack - 0;
+							--stack;	
+						}
+					}
+					
+					delete[] stack;
 					char* stack = new char [100];
-					std::cout << stack[0];
+					
 				}
+			
 			}
-		}
+
+			// adding new element in array
+			*stack = s;
+			//going to next element
+			std::cout << *stack <<std::endl;
+			++ stack; 
+			std::cout << stack;
+			//for int i = 0, i < si
+		}	
+		
+
 	}	
