@@ -38,10 +38,5 @@ int main()
 		
 	       //writing array in new file
 
-		std::ofstream("reversed.txt") << buffer;
-
-		//deleting links
-
-		
-			 
+		std::ofstream("reversed.txt") << buffer;			 
 	}
