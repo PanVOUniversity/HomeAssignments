@@ -1,4 +1,6 @@
-
+/*Pan Vladimir st128934@student.spbu.ru
+  polish calculator
+*/
 #include <iostream>
 #include <string>
 #include <cstdlib>  

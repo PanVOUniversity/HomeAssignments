@@ -1,3 +1,7 @@
+/*Pan Vladimir st128934@student.spbu.ru
+  naive reverce of binary file
+*/
+
 #include <iostream>
 #include <fstream>
 #include <string>
