@@ -2,7 +2,7 @@
 - Сборка в makefile
 - запуск командой ./main
   
-# Assignment 1
+# Assignment 2
 ## Author
 Пан Владимир Олегович, группа 24.Б81-мм
 ## Contacts
