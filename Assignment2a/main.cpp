@@ -6,7 +6,6 @@
 #include <fstream>
 #include <string>
 #include <filesystem>
-#include <algorithm>
 
 int main()
 {
