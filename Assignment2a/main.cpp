@@ -9,38 +9,47 @@
 #include <algorithm>
 
 int main()
-	{
-		//input path
-		std::string a;
-		std::cout << "input path, pls \n";
-		std::cin >> a;
-		
-		//find out the size of binary file
-		std::filesystem::path filepath = a;
-		auto b = std::filesystem::file_size(filepath);
-		std::cout <<  b << "\n";
-		std::ifstream infile;
-		infile.open(a ,std::ios::binary|std::ios::in);
-		
-		//open file, write it into the array, close it, delete it
-		infile.open(a ,std::ios::binary|std::ios::in);
-		char buffer [b];
-		if (infile.is_open())
-		{
-			infile.read((char *)&buffer,sizeof(buffer));
-			infile.close();
-			
-		}	
-		
-		//naive reverse realisation
-		int buffersize = sizeof(buffer)/sizeof(buffer[0]);
-		for (int i = 0;i < buffersize; i++)
-		{
-			std::swap(buffer[i], buffer[buffersize - i]);
-			
-		}
-		
-	       //writing array in new file
+{
+    // Input path
+    std::string filepath;
+    std::cout << "input the path of the binary file: ";
+    std::cin >> filepath;
 
-		std::ofstream("reversed.txt") << buffer;			 
-	}
+    // Find out the size of the binary file
+    std::filesystem::path path_obj(filepath);
+    auto file_size = std::filesystem::file_size(path_obj);
+    std::cout << "File size: " << file_size << " bytes\n";
+
+    // Open the binary file, read it into a dynamically allocated buffer, then close it
+    std::ifstream infile(filepath, std::ios::binary | std::ios::in);
+    if (!infile.is_open()) {
+        std::cerr << "Error: Could not open the file.\n";
+    }
+
+    // Dynamically allocate buffer for file content
+    char* buffer = new char[file_size];
+    infile.read(buffer, file_size);
+    infile.close();
+
+    // Naive reverse realization
+    for (size_t i = 0; i < file_size / 2; ++i) {
+        std::swap(buffer[i], buffer[file_size - i - 1]);
+    }
+
+    // Write the reversed to a new binfile
+    std::ofstream outfile("reversed.bin", std::ios::binary);
+    if (!outfile.is_open()) {
+        std::cerr << "Error: Could not open output file.\n";
+        delete[] buffer;
+        return 1;
+    }
+    outfile.write(buffer, file_size);
+    outfile.close();
+
+    
+    delete[] buffer;
+    std::cout << "has been written to reversed.bin.\n";
+
+    return 0;
+}
+
