@@ -36,7 +36,7 @@ int main()
     }
 
     // Write the reversed to a new binfile
-    std::ofstream outfile("reversed.bin", std::ios::binary);
+    std::ofstream outfile("reversed.txt");
     if (!outfile.is_open()) {
         std::cerr << "Error: Could not open output file.\n";
         delete[] buffer;
@@ -47,7 +47,7 @@ int main()
 
     
     delete[] buffer;
-    std::cout << "has been written to reversed.bin.\n";
+    std::cout << "has been written to reversed.txt.\n";
 
     return 0;
 }
