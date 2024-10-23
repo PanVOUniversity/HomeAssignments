@@ -5,7 +5,7 @@ PROJECT = transformer_tests
 CXX = g++
 
 # Source files
-SRC = Transformer.cpp Weapon.cpp Autobot.cpp Decepticon.cpp test.cpp
+SRC = Transformer.cpp Weapon.cpp Autobot.cpp Decepticon.cpp test_transformer.cpp
 
 # Object files
 OBJ = $(SRC:.cpp=.o)
