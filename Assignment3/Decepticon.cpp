@@ -32,6 +32,6 @@ void Decepticon::setReasonForEvil(const std::string& new_reason_for_evil) {
 
 void Decepticon::displayInfo() const {
     Transformer::displayInfo();
-    std::cout << "Annoyance Level: " << annoyance_level << "/100, Preferred Excuse for Losing: "
-              << preferred_excuse << ", Reason for Evilness: " << reason_for_evil << std::endl;
+    std::cout << "Annoyance Level: " << annoyance_level << "/100, Preferred Excuse: " << preferred_excuse
+              << ", Reason for Evilness: " << reason_for_evil << std::endl;
 }

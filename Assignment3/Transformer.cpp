@@ -1,5 +1,7 @@
 #include "Transformer.h"
 #include <iostream>
+#include <memory>
+
 
 Transformer::Transformer(const std::string& name, int energy_level, const std::string& color, int speed, const std::string& weapon_type, int weapon_power)
     : name(name), energy_level(energy_level), color(color), speed(speed), weapon(std::make_unique<Weapon>(weapon_type, weapon_power)) {}
