@@ -55,10 +55,10 @@ TEST(DecepticonTest, ConstructorAndGetters) {
 
 TEST(DecepticonTest, Setters) {
     Decepticon decepticon("Megatron", 90, "Gray", 90, 75, "The WiFi signal was weak", "Because world domination is a hobby!");
-    decepticon.setPreferredExcuse("My pet ate my homework");
+    decepticon.setPreferredExcuse("I've just exersised");
     decepticon.setAnnoyanceLevel(85);
 
-    EXPECT_EQ(decepticon.getPreferredExcuse(), "My pet ate my homework");
+    EXPECT_EQ(decepticon.getPreferredExcuse(), "I've just exersised");
     EXPECT_EQ(decepticon.getAnnoyanceLevel(), 85);
 }
 
