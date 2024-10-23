@@ -12,6 +12,7 @@ private:
 public:
     // Constructor
     Decepticon(const std::string& name, int energy_level, const std::string& color, int speed,
+               const std::string& weapon_type, int weapon_power,
                int annoyance_level, const std::string& preferred_excuse, const std::string& reason_for_evil);
 
     // Getters and setters

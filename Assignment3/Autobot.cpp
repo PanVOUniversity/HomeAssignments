@@ -22,7 +22,7 @@ void Autobot::setMissionCount(int new_mission_count) {
     mission_count = new_mission_count;
 }
 
-void Autobot::displayInfo() const {
+void Autobot::displayInfo() const override {
     Transformer::displayInfo();
     std::cout << "Commander: " << commander_name << ", Mission Count: " << mission_count << std::endl;
 }
