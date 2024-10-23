@@ -8,7 +8,7 @@ CXX = g++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++11
 
 # Source files
-SRC = main.cpp Autobot.cpp Decepticon.cpp Transformer.cpp Weapon.cpp Critic.cpp
+SRC = Autobot.cpp Decepticon.cpp Transformer.cpp Weapon.cpp Critic.cpp test_transformer.cpp
 
 # Object files
 OBJ = $(SRC:.cpp=.o)
