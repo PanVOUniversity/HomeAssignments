@@ -1,6 +1,9 @@
 #include <gtest/gtest.h>
 #include "Transformer.h"
 #include "Weapon.h"
+#include "Autobot.h"
+#include "Decepticon.h"
+#include "Critic.h"
 
 // Test for Transformer class
 TEST(TransformerTest, CreationAndGetters) {
@@ -26,6 +29,23 @@ TEST(TransformerTest, Setters) {
     EXPECT_EQ(transformer.getEnergyLevel(), 100);
     EXPECT_EQ(transformer.getColor(), "Neon Green");
     EXPECT_EQ(transformer.getSpeed(), 140);
+}
+
+// Test for Autobot class
+TEST(AutobotTest, CreationAndGetters) {
+    Autobot autobot("Optimus Prime", 100, "Red", 80, "Plasma Cannon", 90, "Ultra Magnus", 5);
+    
+    EXPECT_EQ(autobot.getCommanderName(), "Ultra Magnus");
+    EXPECT_EQ(autobot.getMissionCount(), 5);
+}
+
+// Test for Decepticon class
+TEST(DecepticonTest, CreationAndGetters) {
+    Decepticon decepticon("Megatron", 100, "Gray", 75, "Fusion Cannon", 95, 80, "Traffic", "World Domination");
+    
+    EXPECT_EQ(decepticon.getAnnoyanceLevel(), 80);
+    EXPECT_EQ(decepticon.getPreferredExcuse(), "Traffic");
+    EXPECT_EQ(decepticon.getReasonForEvil(), "World Domination");
 }
 
 // Test for displayInfo method (output capturing)
