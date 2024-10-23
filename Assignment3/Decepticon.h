@@ -4,15 +4,17 @@
 #include "Transformer.h"
 
 class Decepticon : public Transformer {
- private:
+private:
     int annoyance_level;
     std::string preferred_excuse;
     std::string reason_for_evil;
 
- public:
-    Decepticon(const std::string& name, int energy_level, const std::string& color, int speed, const std::string& weapon_type, int weapon_power,
+public:
+    // Constructor
+    Decepticon(const std::string& name, int energy_level, const std::string& color, int speed,
                int annoyance_level, const std::string& preferred_excuse, const std::string& reason_for_evil);
 
+    // Getters and setters
     int getAnnoyanceLevel() const;
     void setAnnoyanceLevel(int new_annoyance_level);
     std::string getPreferredExcuse() const;
@@ -20,6 +22,7 @@ class Decepticon : public Transformer {
     std::string getReasonForEvil() const;
     void setReasonForEvil(const std::string& new_reason_for_evil);
 
+    // Overriding method
     void displayInfo() const override;
 };
 

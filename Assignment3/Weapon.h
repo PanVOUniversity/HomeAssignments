@@ -1,23 +1,22 @@
-#ifndef AUTOBOT_H
-#define AUTOBOT_H
+#ifndef WEAPON_H
+#define WEAPON_H
 
-#include "Transformer.h"
+#include <string>
 
-class Autobot : public Transformer {
- private:
-    std::string commander_name;
-    int mission_count;
+class Weapon {
+private:
+    std::string type;
+    int power;
 
- public:
-    Autobot(const std::string& name, int energy_level, const std::string& color, int speed, const std::string& weapon_type, int weapon_power,
-            const std::string& commander_name, int mission_count);
-    
-    std::string getCommanderName() const;
-    void setCommanderName(const std::string& new_commander_name);
-    int getMissionCount() const;
-    void setMissionCount(int new_mission_count);
-    
-    void displayInfo() const override;
+public:
+    // Constructor
+    Weapon(const std::string& type, int power);
+
+    // Getters and setters
+    std::string getType() const;
+    void setType(const std::string& new_type);
+    int getPower() const;
+    void setPower(int new_power);
 };
 
-#endif // AUTOBOT_H
+#endif // WEAPON_H
