@@ -2,6 +2,7 @@
 #define TRANSFORMER_H
 
 #include <string>
+#include <memory>
 #include "Weapon.h"
 
 class Transformer {
@@ -10,7 +11,7 @@ private:
     int energy_level;
     std::string color;
     int speed;
-    Weapon* weapon;  
+    std::unique_ptr<Weapon> weapon;  // Use unique_ptr for automatic memory management
 
 public:
     // Constructor
@@ -18,7 +19,7 @@ public:
                 const std::string& weapon_type, int weapon_power);
 
     // Destructor
-    ~Transformer();
+    virtual ~Transformer();
 
     // Getters and setters
     std::string getName() const;
@@ -33,11 +34,10 @@ public:
     int getSpeed() const;
     void setSpeed(int new_speed);
 
-    Weapon* getWeapon() const;  // Return the pointer to Weapon
+    Weapon* getWeapon() const;  // Return raw pointer for simplicity
 
     // Methods
-    void accelerate() const;
-    void displayInfo() const;
+    virtual void displayInfo() const;
 };
 
 #endif // TRANSFORMER_H

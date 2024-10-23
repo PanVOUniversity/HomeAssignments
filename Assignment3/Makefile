@@ -4,20 +4,19 @@ PROJECT = transformer_tests
 # Compiler
 CXX = g++
 
+# Compiler flags
+CXXFLAGS = -Wall -Wextra -Werror -std=c++11
+
 # Source files
-SRC = Transformer.cpp Weapon.cpp Autobot.cpp Decepticon.cpp test_transformer.cpp
+SRC = main.cpp Autobot.cpp Decepticon.cpp Transformer.cpp Weapon.cpp Critic.cpp
 
 # Object files
 OBJ = $(SRC:.cpp=.o)
 
-# Executable target
-final: $(OBJ)
-	$(CXX) -o $(PROJECT) $(OBJ)
+# Executable
+$(PROJECT): $(OBJ)
+	$(CXX) $(CXXFLAGS) -o $(PROJECT) $(OBJ)
 
-# Compile object files
-%.o: %.cpp
-	$(CXX) -c $< -o $@
-
-# Clean target
+# Clean object files
 clean:
 	rm -f $(OBJ) $(PROJECT)
