@@ -4,13 +4,16 @@
 #include <string>
 
 class Critic {
- private:
+private:
     std::string name;
-    int sarcasm_level;
 
- public:
-    Critic(const std::string& name, int sarcasm_level);
-    void critique() const;
+public:
+    // Constructor
+    Critic(const std::string& name);
+
+    // Getters and setters
+    std::string getName() const;
+    void setName(const std::string& new_name);
 };
 
 #endif // CRITIC_H
