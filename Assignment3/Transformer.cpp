@@ -43,7 +43,7 @@ Weapon* Transformer::getWeapon() const {
     return weapon.get();  // return raw pointer from unique_ptr
 }
 
-void Transformer::displayInfo() const {
+virtual void Transformer::displayInfo() const {
     std::cout << "Transformer: " << name
               << ", Energy Level: " << energy_level
               << ", Color: " << color
