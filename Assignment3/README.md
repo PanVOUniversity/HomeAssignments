@@ -1,28 +1,15 @@
-# Transformers
-Class init and testing
-
-
-## Prerequisites
-
-```bash
-sudo apt install build-essential
-sudo apt install libgtest-dev
-```
-
+- problem-b для контеста № 2
+- Сборка в makefile
+- запуск командой ./main
+  
+# Assignment 2a
+## Author
+Пан Владимир Олегович, группа 24.Б81-мм
+## Contacts
+st128934@student.spbu.ru
+## Description
+Home assingment 2b - Polish calculator
 ## Build
-
-```bash
 make
-```
-
-## Run
-no class realisation
-
-### Demo Application
-no class realisation
-
-### Demo Test Suite
-
-```bash
-./transformer_tests
-```
+## Run 
+./main
