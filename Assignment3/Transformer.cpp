@@ -1,15 +1,10 @@
 #include "Transformer.h"
-#include <iostream>
-#include <memory>
-<<<<<<< HEAD
+#include <iostream>  
 
-=======
->>>>>>> 00b227a6971291974367daade1deb66a914c6719
-
-// Constructor implementation
-Transformer::Transformer(const std::string& name, int energy_level, const std::string& color, int speed, 
-                         const std::string& weapon_type, int weapon_power)
-    : name(name), energy_level(energy_level), color(color), speed(speed), weapon(std::make_unique<Weapon>(weapon_type, weapon_power)) {}
+Transformer::Transformer(const std::string& name, int energy_level, const std::string& color,
+                         int speed, const std::string& weapon_type, int weapon_power)
+    : name(name), energy_level(energy_level), color(color), speed(speed),
+      weapon(std::make_unique<Weapon>(weapon_type, weapon_power)) {}
 
 std::string Transformer::getName() const {
     return name;
@@ -43,16 +38,15 @@ void Transformer::setSpeed(int new_speed) {
     speed = new_speed;
 }
 
-Weapon* Transformer::getWeapon() const {
-    return weapon.get();  // return raw pointer from unique_ptr
+std::unique_ptr<Weapon> Transformer::getWeapon() const {
+    return std::make_unique<Weapon>(*weapon);
+}
+
+Transformer::~Transformer() {
+    // Destructor
 }
 
 void Transformer::displayInfo() const {
-    std::cout << "Transformer: " << name
-              << ", Energy Level: " << energy_level
-              << ", Color: " << color
-              << ", Speed: " << speed << " km/h"
-              << ", Weapon: " << weapon->getType() << " (Power: " << weapon->getPower() << ")" << std::endl;
+    std::cout << "Name: " << name << ", Energy Level: " << energy_level
+              << ", Color: " << color << ", Speed: " << speed << std::endl;
 }
-
-Transformer::~Transformer() = default;  // Defaulted destructor since unique_ptr handles memory
