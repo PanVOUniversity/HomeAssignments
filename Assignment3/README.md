@@ -2,14 +2,15 @@
 - Сборка в makefile
 - запуск командой ./main
   
-# Assignment 2a
+# Assignment 3
 ## Author
 Пан Владимир Олегович, группа 24.Б81-мм
 ## Contacts
 st128934@student.spbu.ru
 ## Description
-Home assingment 2b - Polish calculator
+Home assingment 3 - classes init and test 
 ## Build
 make
 ## Run 
-./main
+no class realisation, for run test check READMETEST.md
+
