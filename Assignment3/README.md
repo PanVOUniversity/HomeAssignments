@@ -1,6 +1,5 @@
-- problem-b для контеста № 2
+- problem для контеста № 3
 - Сборка в makefile
-- запуск командой ./main
   
 # Assignment 3
 ## Author
