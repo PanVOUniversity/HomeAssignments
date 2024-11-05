@@ -10,4 +10,4 @@ void Scope::setScope(const std::string& new_scope) {
 void Scope::getType() const {
     Weapon::getType();
     std::cout << "Zoom is " << zoom<<"x";
-}
+}``
