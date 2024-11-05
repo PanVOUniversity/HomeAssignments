@@ -2,6 +2,7 @@
 #define AUTOBOT_H
 
 #include "Transformer.h"
+#include <string>
 
 class Autobot : public Transformer {
 private:
@@ -14,14 +15,19 @@ public:
             const std::string& weapon_type, int weapon_power, 
             const std::string& commander_name, int mission_count);
 
-    // Getters and setters
+    // Getters and setters for commander name and mission count
     std::string getCommanderName() const;
     void setCommanderName(const std::string& new_commander_name);
     int getMissionCount() const;
     void setMissionCount(int new_mission_count);
 
+<<<<<<< HEAD
     // Override displayInfo
     void displayInfo() const override;  // Correctly using override
+=======
+    
+    void displayInfo() const override;
+>>>>>>> d1879e35af04202e292847f7100114ca99638a73
 };
 
-#endif // AUTOBOT_H
+#endif 
