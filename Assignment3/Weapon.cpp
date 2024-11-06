@@ -1,11 +1,23 @@
-#include "Weapon.h"
+#ifndef WEAPON_H
+#define WEAPON_H
 
-Weapon::Weapon(const std::string& type, int power) : type(type), power(power) {}
+#include <string>
 
-std::string Weapon::getType() const {
-    return type;
-}
+class Weapon {
+protected:
+    std::string type;
+    int power;
 
-int Weapon::getPower() const {
-    return power;
-}
+public:
+    Weapon(const std::string& type, int power) : type(type), power(power) {}
+    
+    std::string getType() const {
+        return type;
+    }
+    
+    int getPower() const {
+        return power;
+    }
+};
+
+#endif

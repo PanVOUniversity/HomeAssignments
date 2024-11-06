@@ -21,13 +21,8 @@ public:
     int getMissionCount() const;
     void setMissionCount(int new_mission_count);
 
-<<<<<<< HEAD
-    // Override displayInfo
-    void displayInfo() const override;  // Correctly using override
-=======
     
     void displayInfo() const override;
->>>>>>> d1879e35af04202e292847f7100114ca99638a73
 };
 
 #endif 

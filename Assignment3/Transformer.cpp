@@ -1,5 +1,4 @@
 #include "Transformer.h"
-#include <iostream>  
 
 Transformer::Transformer(const std::string& name, int energy_level, const std::string& color,
                          int speed, const std::string& weapon_type, int weapon_power)
@@ -38,15 +37,11 @@ void Transformer::setSpeed(int new_speed) {
     speed = new_speed;
 }
 
-std::unique_ptr<Weapon> Transformer::getWeapon() const {
-    return std::make_unique<Weapon>(*weapon);
-}
-
-Transformer::~Transformer() {
-    // Destructor
+Weapon* Transformer::getWeapon() const {
+    return weapon.get();
 }
 
 void Transformer::displayInfo() const {
-    std::cout << "Name: " << name << ", Energy Level: " << energy_level
-              << ", Color: " << color << ", Speed: " << speed << std::endl;
 }
+
+Transformer::~Transformer() {}

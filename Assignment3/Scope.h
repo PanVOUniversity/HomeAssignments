@@ -2,22 +2,21 @@
 #define SCOPE_H
 
 #include "Weapon.h"
+#include <string>
 
 class Scope : public Weapon {
 private:
     int zoom;
 
 public:
-//constructor
-    Scope(int zoom);
-
-
-//Getters and setters
+    Scope(const std::string& type, int power, int zoom);
+    
     int getScope() const;
-    void setScope (std::string new_scope);
+    void setScope(int new_scope);
+    
+    std::string getType() const override; 
+    
+    void displayInfo() const;
+};
 
-//override
-    void getType const override;
-}
-
-#endif;
+#endif
