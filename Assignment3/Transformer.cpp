@@ -46,16 +46,7 @@ Transformer::~Transformer() {
     // Destructor
 }
 
-<<<<<<< HEAD
-virtual void Transformer::displayInfo() const {
-    std::cout << "Transformer: " << name
-              << ", Energy Level: " << energy_level
-              << ", Color: " << color
-              << ", Speed: " << speed << " km/h"
-              << ", Weapon: " << weapon->getType() << " (Power: " << weapon->getPower() << ")" << std::endl;
-=======
 void Transformer::displayInfo() const {
     std::cout << "Name: " << name << ", Energy Level: " << energy_level
               << ", Color: " << color << ", Speed: " << speed << std::endl;
->>>>>>> d1879e35af04202e292847f7100114ca99638a73
 }

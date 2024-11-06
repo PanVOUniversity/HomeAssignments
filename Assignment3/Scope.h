@@ -20,4 +20,4 @@ public:
     void getType const override;
 }
 
-#endif
+#endif;
