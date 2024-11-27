@@ -11,11 +11,15 @@ void test()
     std::string path = "lena_gray.raw";
     Image image = Image(512, 512, path);
     std::vector<unsigned char> vector = image.readToVector(path, 512*512);
-    for(int i = 0; i<= 39; i++)
+    /*
+    for(int i = 0; i<= 10; i++)
     {
         std::cout<<vector[i]<<std::endl;
     }
+    */
     image.writeToFile("new.bmp",vector);
+    image.writeToRaw("new.raw", vector);
+    image.clockwiseRotate(vector);
 }
 
 int main()
