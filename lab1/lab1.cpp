@@ -18,8 +18,8 @@ void test()
         std::cout<<vector[i]<<std::endl;
     }
     */
-    image.writeToFile("new.bmp",vector);
-    image.writeToRaw("new.raw", vector);
+    //image.writeToFile("new.bmp",vector);
+    //image.writeToRaw("new.raw", vector);
     image.writeToRaw("cwrotated.raw",image.clockwiseRotate(vector));
     image.writeToRaw("ccwrotated.raw", image.counterClockwiseRotate(vector));
     image.saveAsGaussianImage(image.counterClockwiseRotate(vector),5);
