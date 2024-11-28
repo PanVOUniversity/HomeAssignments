@@ -19,7 +19,8 @@ void test()
     */
     image.writeToFile("new.bmp",vector);
     image.writeToRaw("new.raw", vector);
-    image.clockwiseRotate(vector);
+    image.writeToRaw("cwrotated.raw",image.clockwiseRotate(vector));
+    image.writeToRaw("ccwrotated.raw", image.counterClockwiseRotate(vector));
 }
 
 int main()
