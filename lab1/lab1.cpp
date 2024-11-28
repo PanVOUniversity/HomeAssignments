@@ -22,7 +22,7 @@ void test()
     image.writeToRaw("new.raw", vector);
     image.writeToRaw("cwrotated.raw",image.clockwiseRotate(vector));
     image.writeToRaw("ccwrotated.raw", image.counterClockwiseRotate(vector));
-    image.saveAsGaussianImage(vector,5);
+    image.saveAsGaussianImage(image.counterClockwiseRotate(vector),5);
 }
 
 int main()
