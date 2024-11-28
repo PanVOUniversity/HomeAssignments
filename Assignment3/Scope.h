@@ -1,3 +1,6 @@
+/*Pan Vladimir st128934@student.spbu.ru
+  transformers
+*/
 #ifndef SCOPE_H
 #define SCOPE_H
 

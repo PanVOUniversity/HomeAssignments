@@ -1,3 +1,6 @@
+/*Pan Vladimir st128934@student.spbu.ru
+  transformers
+*/
 #include <gtest/gtest.h>
 #include "Transformer.h"
 #include "Weapon.h"

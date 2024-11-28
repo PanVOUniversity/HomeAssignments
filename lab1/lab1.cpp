@@ -1,3 +1,6 @@
+/*Pan Vladimir st128934@student.spbu.ru
+  BMP
+*/
 #include<iostream>
 #include<fstream>
 #include<vector>

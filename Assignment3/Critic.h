@@ -1,3 +1,6 @@
+/*Pan Vladimir st128934@student.spbu.ru
+  transformers
+*/
 #ifndef CRITIC_H
 #define CRITIC_H
 

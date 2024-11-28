@@ -1,3 +1,6 @@
+/*Pan Vladimir st128934@student.spbu.ru
+  transformers
+*/
 #include "Decepticon.h"
 #include <iostream>
 #include "Vehicle.h"

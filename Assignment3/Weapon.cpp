@@ -1,3 +1,6 @@
+/*Pan Vladimir st128934@student.spbu.ru
+  transformers
+*/
 #ifndef WEAPON_H
 #define WEAPON_H
 

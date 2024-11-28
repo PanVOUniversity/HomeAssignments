@@ -1,3 +1,6 @@
+/*Pan Vladimir st128934@student.spbu.ru
+  transformers
+*/
 #include "Transformer.h"
 
 Transformer::Transformer(const std::string& name, int energy_level, const std::string& color,
