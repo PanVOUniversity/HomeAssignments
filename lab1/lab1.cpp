@@ -10,7 +10,7 @@
 
 void test()
 {
-    
+
     std::string path = "lena_gray.raw";
     Image image = Image(512, 512, path);
     std::cout<<512*512<<" byte will be ocupied by img";
