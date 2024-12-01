@@ -113,5 +113,6 @@
     "set": "cpp",
     "optional": "cpp",
     "variant": "cpp"
-  }
+  },
+  "C_Cpp.errorSquiggles": "enabled"
 }

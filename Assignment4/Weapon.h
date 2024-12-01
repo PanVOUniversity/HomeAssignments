@@ -21,6 +21,13 @@ public:
     int getPower() const {
         return power;
     }
+
+    friend std::ostream& operator<<(std::ostream& os, const Weapon& weapon) {
+        os << "power: " << weapon.getPower() << " type: " << weapon.getType();
+        return os;
+    }
+        
 };
+
 
 #endif

@@ -7,13 +7,32 @@
 #include "Scope.h"
 #include "Critic.h"
 #include "Decepticon.h"
+#include <sstream>
+#include "Autobot.h"
 
-TEST(TransformerTest, CreationAndGetters) {
-    Transformer transformer("Blazing Nova", 120, "Crimson", 150, "Plasma Cannon", 90);
-    EXPECT_EQ(transformer.getName(), "Blazing Nova");
-    EXPECT_EQ(transformer.getEnergyLevel(), 120);
-    EXPECT_EQ(transformer.getColor(), "Crimson");
-    EXPECT_EQ(transformer.getSpeed(), 150);
-    EXPECT_EQ(transformer.getWeapon()->getType(), "Plasma Cannon");
-    EXPECT_EQ(transformer.getWeapon()->getPower(), 90);
+//<< operator
+TEST(TransformerTest, WeaponTest) {
+  Weapon item("gun", 14);
+
+  std::ostringstream oss;
+  oss << item;
+  EXPECT_EQ(oss.str(), "speed: 14 type: gun");
+}
+TEST(TransformerTest, DecepticonTest){
+  Decepticon item("Name", 12, "blue", 1, "gun", 38, 3, "unluck", "no", "plain", "f52");
+  std::ostringstream oss;
+  oss<<item;
+  EXPECT_EQ(oss.str(), "Name");
+}
+
+TEST(TransformerTest, AutobotTest){
+  Autobot item("Optimus", 14, "red", 12, "gigacannon", 12, "God", 12);
+  std::ostringstream oss;
+  oss<<item;
+  EXPECT_EQ(oss.str(), "Optimus");
+}
+
+int main(int argc, char **argv) {
+    ::testing::InitGoogleTest(&argc, argv);
+    return RUN_ALL_TESTS();
 }

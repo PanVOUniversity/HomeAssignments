@@ -24,7 +24,10 @@ public:
     Weapon* getWeapon() const;
     virtual void displayInfo() const;
     virtual ~Transformer();
-
+    friend std::ostream& operator<<(std::ostream& os, const Transformer& item) {
+        os << item.getName();
+        return os;
+    }    
 private:
     std::string name;
     int energy_level;

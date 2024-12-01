@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/panvo/cppprojects/HomeAssignments/lab1",
-      "program": "/home/panvo/cppprojects/HomeAssignments/lab1/build/Debug/outDebug",
+      "cwd": "/home/panvo/cppprojects/HomeAssignments/Assignment4",
+      "program": "/home/panvo/cppprojects/HomeAssignments/Assignment4/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
