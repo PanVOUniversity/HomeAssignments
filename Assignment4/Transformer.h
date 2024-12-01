@@ -28,6 +28,8 @@ public:
         os << item.getName();
         return os;
     }    
+
+
 private:
     std::string name;
     int energy_level;

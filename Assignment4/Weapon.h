@@ -5,6 +5,7 @@
 #define WEAPON_H
 
 #include <string>
+#include<iostream>
 
 class Weapon {
 protected:
@@ -26,7 +27,8 @@ public:
         os << "power: " << weapon.getPower() << " type: " << weapon.getType();
         return os;
     }
-        
+
+    virtual ~Weapon() {}    
 };
 
 

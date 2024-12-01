@@ -2,6 +2,7 @@
   transformers
 */
 #include "Transformer.h"
+#include<iostream>
 
 Transformer::Transformer(const std::string& name, int energy_level, const std::string& color,
                          int speed, const std::string& weapon_type, int weapon_power)
@@ -46,5 +47,30 @@ Weapon* Transformer::getWeapon() const {
 
 void Transformer::displayInfo() const {
 }
+
+bool operator==(const Transformer& a, const Transformer& b) {
+    return a.getEnergyLevel() == b.getEnergyLevel();
+}
+
+bool operator>(const Transformer& a, const Transformer& b) {
+    return a.getEnergyLevel() > b.getEnergyLevel();
+}
+
+bool operator<(const Transformer& a, const Transformer& b) {
+    return a.getEnergyLevel() < b.getEnergyLevel();
+}
+
+bool operator!=(const Transformer& a, const Transformer& b) {
+    return !(a == b); // Use the equality operator
+}
+
+bool operator>=(const Transformer& a, const Transformer& b) {
+    return (a > b) || (a == b); // Use the greater-than and equality operators
+}
+
+bool operator<=(const Transformer& a, const Transformer& b) {
+    return (a < b) || (a == b); // Use the less-than and equality operators
+}
+
 
 Transformer::~Transformer() {}
