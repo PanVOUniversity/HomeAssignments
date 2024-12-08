@@ -33,5 +33,5 @@
 *.app
 
 #build
-/build
-start
+*/build
+*start
