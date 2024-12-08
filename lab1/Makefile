@@ -1,5 +1,5 @@
 # Project name
-PROJECT = BMP
+PROJECT = start
 
 # Compiler
 CXX = g++
