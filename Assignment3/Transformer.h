@@ -1,36 +1,41 @@
-/*Pan Vladimir st128934@student.spbu.ru
-  transformers
-*/
-#ifndef TRANSFORMER_H
-#define TRANSFORMER_H
+#ifndef TRANSFORMER
+#define TRANSFORMER
 
+#include <iostream>
 #include <string>
-#include <memory>
-#include "Weapon.h"
+#include "City.h"
+#include "Advantage.h"
 
-class Transformer {
-public:
-    Transformer(const std::string& name, int energy_level, const std::string& color,
-                int speed, const std::string& weapon_type, int weapon_power);
-    
-    std::string getName() const;
-    void setName(const std::string& new_name);
-    int getEnergyLevel() const;
-    void setEnergyLevel(int new_energy_level);
-    std::string getColor() const;
-    void setColor(const std::string& new_color);
-    int getSpeed() const;
-    void setSpeed(int new_speed);
-    Weapon* getWeapon() const;
-    virtual void displayInfo() const;
-    virtual ~Transformer();
-
+class Transformer{
 private:
-    std::string name;
-    int energy_level;
-    std::string color;
-    int speed;
-    std::unique_ptr<Weapon> weapon;
-};
+    std::string _name;
+    uint _power;
+    uint _speed;
+    Advantage _equipment;
 
-#endif // TRANSFORMER_H
+public:
+    Transformer(
+        const std::string &name,
+        const uint &power,
+        const uint &speed,
+        const Advantage &equipment
+        );
+    ~Transformer(); 
+
+    std::string getName();
+    void setName(const std::string &name);
+
+    uint getPower();
+    void setPower(const uint &power);
+
+    uint getSpeed();
+    void setSpeed(const uint &speed);
+
+    Advantage getEquipment();
+    void setEquipment(const Advantage &equipment);
+  
+    void surrender(Transformer &item);
+    void attack(City &item);
+    
+};
+#endif
