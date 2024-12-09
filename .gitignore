@@ -36,6 +36,7 @@
 */build
 *start
 .vscode
+*.orig
 
 #bin
 *.raw
