@@ -4,12 +4,16 @@
 
 //composition
 class Advantage{
-public:
-    int power;
 
+private:
+    int _power;
+
+public:
     Advantage(const int &power);
     ~Advantage();
 
+    void setPower(const int &power);
+    int getPower();
 };
 
 

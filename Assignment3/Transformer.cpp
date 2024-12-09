@@ -11,7 +11,7 @@ Transformer::Transformer(
     _speed(speed),
     _equipment(equipment){};
 
-Transformer::~Transformer(){};
+Transformer::~Transformer() = default;
 
 std::string Transformer::getName(){
     return _name;
@@ -54,5 +54,13 @@ void Transformer::surrender(Transformer &item){
 }
 
 void Transformer::attack(City &item){
-    item.number_of_destroyed_buildings += _power;
+    item.setBuildings((item.getBuildings() + _power));
+}
+
+int main()
+{
+    Advantage blaster = Advantage(100);
+    Transformer item = Transformer("name", 100, 100, blaster);
+    std::cout<<item.getEquipment().getPower()<< std::endl;
+    return 0;
 }
