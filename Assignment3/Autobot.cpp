@@ -7,17 +7,17 @@ Autobot::Autobot(
     const std::string &name,
     const uint &power,
     const uint &speed,
-    const Advantage &equipment,
+    const int &advantage_power,
     const std::string &commander,
     const std::string &reason_for_kindness
 ):
-    Transformer(name, power, speed, equipment),
+    Transformer(name, power, speed, advantage_power),
     _commander(commander),
     _reason_for_kindness(reason_for_kindness) {};
 
 Autobot::~Autobot() = default;
 
-std::string Autobot::getCommander()
+std::string Autobot::getCommander() const
 {
     return _commander;
 }
@@ -27,7 +27,7 @@ void Autobot::setCommander(const std::string &commander)
     _commander = commander;
 }
 
-std::string Autobot::getReasonForKindness()
+std::string Autobot::getReasonForKindness() const
 {
     return _reason_for_kindness;
 }

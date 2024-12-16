@@ -34,8 +34,8 @@ TEST(CityTest, BuildingManagement)
 // Test for the Transformer class
 TEST(TransformerTest, TransformerCreation)
 {
-    Advantage blaster(100);
-    Transformer transformer("Optimus Prime", 150, 80, blaster);
+    
+    Transformer transformer("Optimus Prime", 150, 80, 100);
 
     EXPECT_EQ(transformer.getName(), "Optimus Prime");
     EXPECT_EQ(transformer.getPower(), 150);
@@ -45,8 +45,7 @@ TEST(TransformerTest, TransformerCreation)
 
 TEST(TransformerTest, TransformerSurrender)
 {
-    Advantage blaster(100);
-    Transformer transformer("Optimus Prime", 150, 80, blaster);
+    Transformer transformer("Optimus Prime", 150, 80, 100);
 
     transformer.surrender(transformer);
 
@@ -58,8 +57,8 @@ TEST(TransformerTest, TransformerSurrender)
 
 TEST(TransformerTest, TransformerAttack)
 {
-    Advantage blaster(50);
-    Transformer transformer("Bumblebee", 100, 60, blaster);
+
+    Transformer transformer("Bumblebee", 100, 60, 100);
 
     City city;
     city.setBuildings(10);
@@ -72,8 +71,8 @@ TEST(TransformerTest, TransformerAttack)
 // Test for the Autobot class
 TEST(AutobotTest, AutobotCreation)
 {
-    Advantage blaster(200);
-    Autobot autobot("Jazz", 120, 90, blaster, "Optimus Prime", "Protect humanity");
+    ;
+    Autobot autobot("Jazz", 120, 90, 200, "Optimus Prime", "Protect humanity");
 
     EXPECT_EQ(autobot.getName(), "Jazz");
     EXPECT_EQ(autobot.getPower(), 120);
@@ -85,8 +84,8 @@ TEST(AutobotTest, AutobotCreation)
 
 TEST(AutobotTest, CallCommander)
 {
-    Advantage blaster(200);
-    Autobot autobot("Jazz", 120, 90, blaster, "Optimus Prime", "Protect humanity");
+    ;
+    Autobot autobot("Jazz", 120, 90, 200, "Optimus Prime", "Protect humanity");
 
     // No assertion, but this ensures the method runs without crashing
     autobot.callComander();
@@ -95,8 +94,7 @@ TEST(AutobotTest, CallCommander)
 // Test Constructor and Getter Methods
 TEST(MiniconTest, ConstructorAndGetters)
 {
-    Advantage advantage(100); // Create Advantage object with power 100
-    Minicon minicon("MiniBot", 50, 30, advantage, "Optimus Prime", "Save Earth");
+    Minicon minicon("MiniBot", 50, 30, 100, "Optimus Prime", "Save Earth");
 
     // Test the name, power, speed, and master
     EXPECT_EQ(minicon.getName(), "MiniBot");
@@ -112,8 +110,8 @@ TEST(MiniconTest, ConstructorAndGetters)
 // Test Setters and Modifying Values
 TEST(MiniconTest, Setters)
 {
-    Advantage advantage(100);
-    Minicon minicon("MiniBot", 50, 30, advantage, "Optimus Prime", "Save Earth");
+    
+    Minicon minicon("MiniBot", 50, 30, 100, "Optimus Prime", "Save Earth");
 
     // Modify the values
     minicon.setMaster("Megatron");
@@ -131,8 +129,8 @@ TEST(MiniconTest, Setters)
 // Test the `callMaster` method (printing output)
 TEST(MiniconTest, CallMaster)
 {
-    Advantage advantage(100);
-    Minicon minicon("MiniBot", 50, 30, advantage, "Optimus Prime", "Save Earth");
+    
+    Minicon minicon("MiniBot", 50, 30, 100, "Optimus Prime", "Save Earth");
 
     // Capture the output of `callMaster()`
     testing::internal::CaptureStdout();
@@ -146,8 +144,8 @@ TEST(MiniconTest, CallMaster)
 // Test Constructor and Getter Methods
 TEST(DecepticonTest, ConstructorAndGetters)
 {
-    Advantage advantage(100); // Create Advantage object with power 100
-    Decepticon decepticon("Megatron", 200, 150, advantage, "Optimus Prime", "World Domination");
+     // Create Advantage object with power 100
+    Decepticon decepticon("Megatron", 200, 150, 100, "Optimus Prime", "World Domination");
 
     // Test the name, power, speed, enemy, and reason for evilness
     EXPECT_EQ(decepticon.getName(), "Megatron");
@@ -163,8 +161,8 @@ TEST(DecepticonTest, ConstructorAndGetters)
 // Test Setters and Modifying Values
 TEST(DecepticonTest, Setters)
 {
-    Advantage advantage(100);
-    Decepticon decepticon("Megatron", 200, 150, advantage, "Optimus Prime", "World Domination");
+    
+    Decepticon decepticon("Megatron", 200, 150, 100, "Optimus Prime", "World Domination");
 
     // Modify the values using setter methods
     decepticon.setEnemy("Bumblebee");
@@ -182,8 +180,8 @@ TEST(DecepticonTest, Setters)
 // Test the `threatenTheEnemy` method (printing output)
 TEST(DecepticonTest, ThreatenTheEnemy)
 {
-    Advantage advantage(100);
-    Decepticon decepticon("Megatron", 200, 150, advantage, "Optimus Prime", "World Domination");
+    
+    Decepticon decepticon("Megatron", 200, 150, 100, "Optimus Prime", "World Domination");
 
     // Capture the output of `threatenTheEnemy()`
     testing::internal::CaptureStdout();

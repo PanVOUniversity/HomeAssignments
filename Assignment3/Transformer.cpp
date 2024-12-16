@@ -8,30 +8,30 @@ Transformer::Transformer(
     const std::string &name,
     const uint &power,
     const uint &speed,
-    const Advantage &equipment):
+    const int &advantage_power):
     _name(name),
     _power(power),
     _speed(speed),
-    _equipment(equipment) {};
+    advantage(advantage_power){};
 
 Transformer::~Transformer() = default;
 
-std::string Transformer::getName()
+std::string Transformer::getName() const
 {
     return _name;
 }
 
-Advantage Transformer::getEquipment()
+Advantage Transformer::getEquipment() const
 {
-    return _equipment;
+    return advantage;
 }
 
-uint Transformer::getSpeed()
+uint Transformer::getSpeed() const
 {
     return _speed;
 }
 
-uint Transformer::getPower()
+uint Transformer::getPower() const
 {
     return _power;
 }
@@ -43,7 +43,7 @@ void Transformer::setSpeed(const uint &speed)
 
 void Transformer::setEquipment(const Advantage &equipment)
 {
-    _equipment = equipment;
+    advantage = equipment;
 }
 
 void Transformer::setName(const std::string &name)

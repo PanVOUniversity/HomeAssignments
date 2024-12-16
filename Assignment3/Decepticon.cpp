@@ -7,11 +7,11 @@ Decepticon::Decepticon(
     const std::string &name,
     const uint &power,
     const uint &speed,
-    const Advantage &equipment,
+    const int &advantage_power,
     const std::string &enemy,
     const std::string &reason_for_evilness
 ):
-    Transformer(name, power, speed, equipment),
+    Transformer(name, power, speed, advantage_power),
     _enemy(enemy),
     _reason_for_evilness(reason_for_evilness) {};
 

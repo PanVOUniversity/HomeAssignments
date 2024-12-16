@@ -16,7 +16,7 @@ public:
         const std::string &name,
         const uint &power,
         const uint &speed,
-        const Advantage &equipment,
+        const int &advantage_power,
         const std::string &master,
         const std::string &existance_obligation
     );

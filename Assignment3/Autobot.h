@@ -16,19 +16,21 @@ public:
         const std::string &name,
         const uint &power,
         const uint &speed,
-        const Advantage &equipment,
+        const int &advantage_power,
         const std::string &commander,
         const std::string &reason_for_kindness
     );
     ~Autobot();
 
-    std::string getCommander();
+    std::string getCommander() const;
     void setCommander(const std::string &commander);
 
-    std::string getReasonForKindness();
+    std::string getReasonForKindness() const;
     void setReasonForKindness(const std::string &reason_for_kindness);
         
     void callComander();
 };
+
+std::ostream& operator<<(std::ostream& os, const Autobot& item);
 
 #endif

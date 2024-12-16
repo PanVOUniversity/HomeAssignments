@@ -7,11 +7,11 @@ Minicon::Minicon(
     const std::string &name,
     const uint &power,
     const uint &speed,
-    const Advantage &equipment,
+    const int &advantage_power,
     const std::string &master,
     const std::string &existance_obligation
 ):
-    Transformer(name, power, speed, equipment),
+    Transformer(name, power, speed, advantage_power),
     _master(master),
     _existance_obligation(existance_obligation) {};
 

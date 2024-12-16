@@ -14,27 +14,27 @@ private:
     std::string _name;
     uint _power;
     uint _speed;
-    Advantage _equipment;
+    Advantage advantage;
 
 public:
     Transformer(
         const std::string &name,
         const uint &power,
         const uint &speed,
-        const Advantage &equipment
+        const int &advantage_power
         );
     ~Transformer(); 
 
-    std::string getName();
+    std::string getName() const;
     void setName(const std::string &name);
 
-    uint getPower();
+    uint getPower() const;
     void setPower(const uint &power);
 
-    uint getSpeed();
+    uint getSpeed() const;
     void setSpeed(const uint &speed);
 
-    Advantage getEquipment();
+    Advantage getEquipment() const;
     void setEquipment(const Advantage &equipment);
   
     void surrender(Transformer &item);
