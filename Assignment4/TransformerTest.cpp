@@ -58,6 +58,67 @@ TEST(AutobotTest, OperatorOverloading)
     EXPECT_EQ(ss.str(), expected_output);
 }
 
+TEST(MiniconOperatorOverloading, ComparisonAndAssignment) {
+    Minicon m1("Fixit", 120, 50, 90, "Master A", "Repairing Obligation");
+    Minicon m2("Micronus", 140, 60, 100, "Master B", "Guardian Duty");
+    Minicon m3("Tiny", 80, 40, 70, "Master C", "Support Duty");
+    Minicon m4("Fixit", 120, 50, 90, "Master A", "Repairing Obligation");
+
+    EXPECT_TRUE(m1 < m2);
+    EXPECT_TRUE(m2 > m1);
+    EXPECT_FALSE(m1 > m2);
+    EXPECT_FALSE(m3 > m1);
+
+    EXPECT_TRUE(m1 == m4);
+    EXPECT_EQ(m1.getName(), "Fixit");
+    EXPECT_EQ(m1.getPower(), 120);
+    EXPECT_EQ(m1.getSpeed(), 50);
+    EXPECT_EQ(m1.getEquipment().getPower(), 90);
+    EXPECT_EQ(m1.getMaster(), "Master A");
+    EXPECT_EQ(m1.getExistanceObligation(), "Repairing Obligation");
+}
+
+
+TEST(DecepticonOperatorOverloading, ComparisonAndAssignment) {
+    Decepticon d1("Starscream", 200, 80, 150, "Optimus Prime", "Envy");
+    Decepticon d2("Soundwave", 180, 75, 130, "Bumblebee", "Loyalty to Megatron");
+    Decepticon d3("Frenzy", 90, 50, 70, "Ratchet", "Chaos");
+    Decepticon d4("Starscream", 200, 80, 150, "Optimus Prime", "Envy");
+
+    EXPECT_TRUE(d3 < d2);
+    EXPECT_TRUE(d1 > d3);
+    EXPECT_FALSE(d2 > d1);
+    EXPECT_FALSE(d3 > d2);
+
+    EXPECT_TRUE(d1 == d4);
+    EXPECT_EQ(d1.getName(), "Starscream");
+    EXPECT_EQ(d1.getPower(), 200);
+    EXPECT_EQ(d1.getSpeed(), 80);
+    EXPECT_EQ(d1.getEquipment().getPower(), 150);
+    EXPECT_EQ(d1.getEnemy(), "Optimus Prime");
+    EXPECT_EQ(d1.getReasonForevilness(), "Envy");
+}
+
+TEST(AutobotOperatorOverloading, ComparisonAndAssignment) {
+    Autobot a1("Optimus Prime", 250, 100, 200, "Alpha Trion", "Leadership");
+    Autobot a2("Bumblebee", 150, 90, 120, "Optimus Prime", "Courage");
+    Autobot a3("Cliffjumper", 100, 80, 100, "Hot Rod", "Revenge");
+    Autobot a4("Optimus Prime", 250, 100, 200, "Alpha Trion", "Leadership");
+
+    EXPECT_TRUE(a3 < a2);
+    EXPECT_TRUE(a1 > a3);
+    EXPECT_FALSE(a2 > a1);
+    EXPECT_FALSE(a3 > a2);
+
+    EXPECT_TRUE(a1 == a4);
+    EXPECT_EQ(a1.getName(), "Optimus Prime");
+    EXPECT_EQ(a1.getPower(), 250);
+    EXPECT_EQ(a1.getSpeed(), 100);
+    EXPECT_EQ(a1.getEquipment().getPower(), 200);
+    EXPECT_EQ(a1.getCommander(), "Alpha Trion");
+    EXPECT_EQ(a1.getReasonForKindness(), "Leadership");
+}
+
 TEST(TransformerOperatorOverloading, ComparisonAndAssignment)
 {
     Transformer t1("Optimus Prime", 150, 80, 100);
