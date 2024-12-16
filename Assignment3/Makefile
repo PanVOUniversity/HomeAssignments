@@ -2,7 +2,7 @@ PROJECT = transformers
 
 LIBPROJECT = $(PROJECT).a
 
-TESTPROJECT = test-$(PROJECT)
+TESTPROJECT = test
 
 CXX = g++
 
@@ -40,11 +40,11 @@ $(TESTPROJECT): $(LIBPROJECT) $(TEST-OBJ)
 	$(CXX) -o $@ $(TEST-OBJ) $(LDGTESTFLAGS)
 
 # Run the tests
-test: $(TESTPROJECT)
+tests: $(TESTPROJECT)
 	./$(TESTPROJECT)
 
 # Build all targets
-all: test
+all: tests
 
 # Clean up object files
 clean:

@@ -1,7 +1,6 @@
 - problem для контеста № 3
 - Сборка в makefile
 - Запуск не предусмотрен, нет реализации классов
-- Запуск тестов make run
 # Assignment 3
 ## Author
 Пан Владимир Олегович, группа 24.Б81-мм
@@ -12,4 +11,4 @@ Home assingment 3 - classes init and test
 ## Build
 make
 ## Run Tests
-make run
+test
