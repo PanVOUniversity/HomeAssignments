@@ -8,7 +8,7 @@ City::~City() {};
 
 int City::getBuildings()
 {
-    return _number_of_destroyed_buildings;
+  return _number_of_destroyed_buildings;
 }
 
 void City::setBuildings(const int &number)

@@ -71,7 +71,7 @@ TEST(TransformerTest, TransformerAttack)
 // Test for the Autobot class
 TEST(AutobotTest, AutobotCreation)
 {
-    ;
+    
     Autobot autobot("Jazz", 120, 90, 200, "Optimus Prime", "Protect humanity");
 
     EXPECT_EQ(autobot.getName(), "Jazz");
@@ -84,7 +84,7 @@ TEST(AutobotTest, AutobotCreation)
 
 TEST(AutobotTest, CallCommander)
 {
-    ;
+    
     Autobot autobot("Jazz", 120, 90, 200, "Optimus Prime", "Protect humanity");
 
     // No assertion, but this ensures the method runs without crashing
@@ -190,4 +190,32 @@ TEST(DecepticonTest, ThreatenTheEnemy)
 
     // Check if the output is as expected
     EXPECT_EQ(output, "Optimus Prime, I'll destroy you!!!\n");
+}
+
+TEST(TransformerTest, TransformerAttackCity)
+{
+    City city;
+    city.setBuildings(10);
+    Transformer transformer("Optimus Prime", 150, 80, 100, &city);
+
+    transformer.attack(city);
+
+    EXPECT_EQ(city.getBuildings(), 160);
+}
+
+TEST(TransformerTest, DefaultCityAssociation)
+{
+    Transformer transformer("Optimus Prime", 150, 80, 100);
+
+    EXPECT_EQ(transformer.getCity(), nullptr);
+}
+
+TEST(TransformerTest, SetCityAssociation)
+{
+    City city;
+    Transformer transformer("Optimus Prime", 150, 80, 100);
+
+    transformer.setCity(&city);
+
+    EXPECT_EQ(transformer.getCity(), &city);
 }

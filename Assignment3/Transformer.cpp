@@ -3,17 +3,19 @@
 */
 #include "Transformer.h"
 
-
 Transformer::Transformer(
     const std::string &name,
     const uint &power,
     const uint &speed,
-    const int &advantage_power):
+    const int &advantage_power,
+    City* c
+):
     _name(name),
     _power(power),
     _speed(speed),
-    advantage(advantage_power){};
-
+    advantage(advantage_power),
+    _city(c) 
+{}
 Transformer::~Transformer() = default;
 
 std::string Transformer::getName() const
@@ -65,8 +67,23 @@ void Transformer::surrender(Transformer &item)
     item.setSpeed(0);
 }
 
+
+
+City* Transformer::getCity() const
+{
+    return _city;
+}
+
+void Transformer::setCity(City* c)
+{
+    _city = c;
+}
+
 void Transformer::attack(City &item)
 {
+    if (&item == _city) {
+        std::cout << _name << " is attacking its associated city!\n";
+    }
     item.setBuildings((item.getBuildings() + _power));
 }
 
