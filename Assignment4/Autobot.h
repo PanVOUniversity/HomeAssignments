@@ -1,5 +1,5 @@
 /*Pan Vladimir st128934@student.spbu.ru
-  transformers
+"Home assignment 4 - operator and constructors overloading"
 */
 #ifndef AUTOBOT
 #define AUTOBOT
