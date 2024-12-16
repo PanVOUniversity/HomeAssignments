@@ -1,40 +1,56 @@
-# Compiler and flags
+PROJECT = transformers
+
+LIBPROJECT = $(PROJECT).a
+
+TESTPROJECT = test-$(PROJECT)
+
 CXX = g++
-CXXFLAGS = -std=c++11 -Wall -Wextra -g -I$(GTEST_DIR)/include -pthread
 
-# Source files and headers
-SRC = TransformerTest.cpp Advantage.cpp Transformer.cpp City.cpp Autobot.cpp Minicon.cpp Decepticon.cpp
-OBJ = $(SRC:.cpp=.o)
+A = ar
 
-# Google Test directories
-GTEST_DIR = /usr/local
+AFLAGS = rsv
 
-# Output file for tests
-OUTPUT = runTests
+CCXFLAGS = -I. -std=c++11 -Wall -Wextra -g -pthread
 
-# Google Test libraries
-GTEST_LIBS = -L$(GTEST_DIR)/lib -lgtest -lgtest_main
+LDXXFLAGS = $(CCXFLAGS) -L. -l:$(LIBPROJECT)
 
-# Default target
-all: $(OUTPUT)
+LDGTESTFLAGS = $(LDXXFLAGS) -lgtest -lgtest_main -lpthread
 
-# Rule to build the test executable
-$(OUTPUT): $(OBJ)
-	$(CXX) $(CXXFLAGS) -o $(OUTPUT) $(OBJ) $(GTEST_LIBS)
+DEPS = $(wildcard *.h)
+
+OBJ = Advantage.o Transformer.o City.o Autobot.o Minicon.o Decepticon.o TransformerTest.o
+
+# Test object files (just the test file for now)
+TEST-OBJ = TransformerTest.o
+
+.PHONY: default
+
+default: all
 
 # Rule to compile .cpp files to .o files
-%.o: %.cpp
-	$(CXX) $(CXXFLAGS) -c $< -o $@
+%.o: %.cpp $(DEPS)
+	$(CXX) -c -o $@ $< $(CCXFLAGS)
 
-# Clean up the object and executable files
-clean:
-	rm -f $(OBJ) $(OUTPUT)
+# Create static library
+$(LIBPROJECT): $(OBJ)
+	$(A) $(AFLAGS) $@ $^
+
+# Build the test executable
+$(TESTPROJECT): $(LIBPROJECT) $(TEST-OBJ)
+	$(CXX) -o $@ $(TEST-OBJ) $(LDGTESTFLAGS)
 
 # Run the tests
-run: $(OUTPUT)
-	./$(OUTPUT)
+test: $(TESTPROJECT)
+	./$(TESTPROJECT)
 
-# Rebuild everything from scratch
-rebuild: clean all
+# Build all targets
+all: test
 
-.PHONY: all clean run rebuild
+# Clean up object files
+clean:
+	rm -f *.o
+
+# Clean up all build artifacts
+cleanall: clean
+	rm -f $(LIBPROJECT)
+	rm -f $(TESTPROJECT)
