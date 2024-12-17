@@ -60,15 +60,15 @@ std::ostream&operator<<(std::ostream& os,const Decepticon& item)
 
 void Decepticon::transform()
 {
-    std::cout << "Transformer, transform" << std::endl;
+    std::cout << "Decepticon, transform" << std::endl;
 }
 
 void Decepticon::ulta()
 {
-    std::cout << "Transformer, ulta" << std::endl;
+    std::cout << "Decepticon, ulta" << std::endl;
 }
 
 void Decepticon::openFire()
 {
-    std::cout << "Transformer, openFire" << std::endl;
+    std::cout << "Decepticon, openFire" << std::endl;
 }

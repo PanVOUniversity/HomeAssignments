@@ -73,5 +73,3 @@ void Autobot::openFire()
 {
     std::cout << "Autobot, openFire" << std::endl;
 }
-
-
