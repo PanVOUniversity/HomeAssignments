@@ -11,4 +11,4 @@ Home assingment 4 - operator and constructors overloading
 ## Build
 make
 ## Run Tests
-test
+./test

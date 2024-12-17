@@ -1,6 +1,5 @@
 /*Pan Vladimir st128934@student.spbu.ru
-"Home assignment 4 - operator and constructors overloading"
-*/
+"Home assignment 5 - virtual methods creation and use*/
 #ifndef AUTOBOT
 #define AUTOBOT
 

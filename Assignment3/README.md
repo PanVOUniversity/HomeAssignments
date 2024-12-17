@@ -11,4 +11,4 @@ Home assingment 3 - classes init and test
 ## Build
 make
 ## Run Tests
-test
+./test
