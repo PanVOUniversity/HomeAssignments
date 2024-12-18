@@ -43,3 +43,6 @@
 
 #editheader
 *.py
+
+#vscode
+*.vscode
