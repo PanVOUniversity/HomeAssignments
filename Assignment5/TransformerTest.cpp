@@ -19,6 +19,7 @@ TEST(TransformerTest, TransformOutput) {
     transformer.transform();
 
     std::cout.rdbuf(originalBuffer);
+    std::cout << capturedOutput.str(); 
 
     EXPECT_EQ(capturedOutput.str(), "Default constructor called.\nTransformer, transform\n");
 }
@@ -32,6 +33,7 @@ TEST(TransformerTest, UltaOutput) {
     transformer.ulta();
 
     std::cout.rdbuf(originalBuffer);
+    std::cout << capturedOutput.str(); 
 
     EXPECT_EQ(capturedOutput.str(), "Default constructor called.\nTransformer, ulta\n");
 }
@@ -45,6 +47,7 @@ TEST(TransformerTest, OpenFireOutput) {
     transformer.openFire();
 
     std::cout.rdbuf(originalBuffer);
+    std::cout << capturedOutput.str(); 
 
     EXPECT_EQ(capturedOutput.str(), "Default constructor called.\nTransformer, openFire\n");
 }
@@ -58,6 +61,7 @@ TEST(DecepticonTest, TransformOutput) {
     decepticon.transform();
 
     std::cout.rdbuf(originalBuffer);
+    std::cout << capturedOutput.str(); 
 
     EXPECT_EQ(capturedOutput.str(), "Decepticon, transform\n");
 }
@@ -71,6 +75,7 @@ TEST(DecepticonTest, UltaOutput) {
     decepticon.ulta();
 
     std::cout.rdbuf(originalBuffer);
+    std::cout << capturedOutput.str(); 
 
     EXPECT_EQ(capturedOutput.str(), "Decepticon, ulta\n");
 }
@@ -84,6 +89,7 @@ TEST(DecepticonTest, OpenFireOutput) {
     decepticon.openFire();
 
     std::cout.rdbuf(originalBuffer);
+    std::cout << capturedOutput.str(); 
 
     EXPECT_EQ(capturedOutput.str(), "Decepticon, openFire\n");
 }
@@ -97,6 +103,7 @@ TEST(AutobotTest, CallCommanderOutput) {
     autobot.callComander();
 
     std::cout.rdbuf(originalBuffer);
+    std::cout << capturedOutput.str(); 
 
     EXPECT_EQ(capturedOutput.str(), "Optimus Prime!!!\n");
 }
@@ -110,6 +117,7 @@ TEST(AutobotTest, TransformOutput) {
     autobot.transform();
 
     std::cout.rdbuf(originalBuffer);
+    std::cout << capturedOutput.str(); 
 
     EXPECT_EQ(capturedOutput.str(), "Autobot, transform\n");
 }
@@ -123,6 +131,7 @@ TEST(AutobotTest, UltaOutput) {
     autobot.ulta();
 
     std::cout.rdbuf(originalBuffer);
+    std::cout << capturedOutput.str(); 
 
     EXPECT_EQ(capturedOutput.str(), "Autobot, ulta\n");
 }
@@ -136,10 +145,10 @@ TEST(AutobotTest, OpenFireOutput) {
     autobot.openFire();
 
     std::cout.rdbuf(originalBuffer);
+    std::cout << capturedOutput.str(); 
 
     EXPECT_EQ(capturedOutput.str(), "Autobot, openFire\n");
 }
-
 
 TEST(AutobotTest, TransformWithBasePointer) {
     std::ostringstream capturedOutput;
@@ -150,7 +159,7 @@ TEST(AutobotTest, TransformWithBasePointer) {
     autobot->transform();
 
     std::cout.rdbuf(originalBuffer);
-    
+    std::cout << capturedOutput.str(); 
 
     EXPECT_EQ(capturedOutput.str(), "Autobot, transform\n");
 }
@@ -164,7 +173,7 @@ TEST(AutobotTest, UltaWithBasePointer) {
     autobot->ulta();
 
     std::cout.rdbuf(originalBuffer);
-    
+    std::cout << capturedOutput.str(); 
 
     EXPECT_EQ(capturedOutput.str(), "Autobot, ulta\n");
 }
@@ -178,7 +187,7 @@ TEST(AutobotTest, OpenFireWithBasePointer) {
     autobot->openFire();
 
     std::cout.rdbuf(originalBuffer);
-    
+    std::cout << capturedOutput.str(); 
 
     EXPECT_EQ(capturedOutput.str(), "Autobot, openFire\n");
 }
@@ -192,7 +201,7 @@ TEST(DecepticonTest, TransformWithBasePointer) {
     decepticon->transform();
 
     std::cout.rdbuf(originalBuffer);
-    
+    std::cout << capturedOutput.str(); 
 
     EXPECT_EQ(capturedOutput.str(), "Decepticon, transform\n");
 }
@@ -206,7 +215,7 @@ TEST(DecepticonTest, UltaWithBasePointer) {
     decepticon->ulta();
 
     std::cout.rdbuf(originalBuffer);
-    
+    std::cout << capturedOutput.str(); 
 
     EXPECT_EQ(capturedOutput.str(), "Decepticon, ulta\n");
 }
@@ -220,11 +229,10 @@ TEST(DecepticonTest, OpenFireWithBasePointer) {
     decepticon->openFire();
 
     std::cout.rdbuf(originalBuffer);
-    
+    std::cout << capturedOutput.str(); 
 
     EXPECT_EQ(capturedOutput.str(), "Decepticon, openFire\n");
 }
-
 
 TEST(TransformerTest, VirtualMethodCalls) {
     std::vector<Transformer*> transformers;
@@ -252,6 +260,7 @@ TEST(TransformerTest, VirtualMethodCalls) {
     }
 
     std::cout.rdbuf(originalBuffer);
+    std::cout << capturedOutput.str(); 
 
     EXPECT_TRUE(capturedOutput.str().find("Autobot, transform") != std::string::npos);
     EXPECT_TRUE(capturedOutput.str().find("Decepticon, transform") != std::string::npos);
@@ -262,8 +271,4 @@ TEST(TransformerTest, VirtualMethodCalls) {
     EXPECT_TRUE(capturedOutput.str().find("Autobot, openFire") != std::string::npos);
     EXPECT_TRUE(capturedOutput.str().find("Decepticon, openFire") != std::string::npos);
     EXPECT_TRUE(capturedOutput.str().find("Transformer, openFire") != std::string::npos);
-
-
-    
 }
-
