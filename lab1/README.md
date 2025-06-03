@@ -17,7 +17,7 @@ Key Update: This version of the project has been enhanced with OpenMP paralleliz
 
 The project uses a Makefile to simplify compilation. It supports building both a sequential and a parallel version of the executable.
 
-0. **Dive to source folder**
+0. **Dive into source folder**
    cd source/
 
 1. **Clean previous builds:**  
