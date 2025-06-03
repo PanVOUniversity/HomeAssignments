@@ -11,7 +11,7 @@ private:
     std::string _name;
     uint _power;
     uint _speed;
-    Advantage advantage;
+    Advantage _advantage;
     City* _city; // Pointer to associated City
 
 public:
