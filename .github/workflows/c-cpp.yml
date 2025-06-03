@@ -1,4 +1,4 @@
-name: C++ Image Processing Build Check
+name: check
 
 on:
   push:
