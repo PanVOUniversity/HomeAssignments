@@ -1,50 +1,44 @@
-name: check
+name: cheks
 
 on:
   push:
     branches:
-      - HomeAssignments # Trigger on pushes to the main branch
+      - HomeAssignments
   pull_request:
     branches:
-      - HomeAssignments # Trigger on pull requests to the main branch
+      - HomeAssignments
+  workflow_dispatch:
 
 jobs:
   build:
-    runs-on: ubuntu-latest # Use the latest Ubuntu environment
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: lab1
 
     steps:
     - name: Checkout code
-      uses: actions/checkout@v4 # Action to check out your repository code
+      uses: actions/checkout@v4
 
     - name: Install dependencies
       run: |
         sudo apt-get update
-        sudo apt-get install -y g++ make imagemagick # Install C++ compiler, make, and ImageMagick
+        sudo apt-get install -y g++ make imagemagick
 
-    - name: Clean previous builds
-      run: make clean # Ensure a clean build environment
+    - name: Clean
+      run: make clean
 
-    - name: Build sequential and parallel executables
-      run: make # This will build both start_sequential and start_parallel as per your Makefile
+    - name: Build
+      run: make
 
-    - name: Run sequential version and check output
+    - name: Run and verify outputs
       run: |
-        ./start_sequential
-        # Check if output raw files were created
-        ls -l cwrotated.raw ccwrotated.raw gaussian_blurred.raw
-
-    - name: Run parallel version and check output
-      run: |
-        ./start_parallel
-        # Check if output raw files were created
+        ./start
         ls -l cwrotated.raw ccwrotated.raw gaussian_blurred.raw
 
     - name: Verify image output with ImageMagick
       run: |
-        # Convert the gaussian_blurred.raw (512x512, 8-bit grayscale) to PNG
-        # This step verifies that the raw output is valid and ImageMagick is working.
         convert -size 512x512 -depth 8 gray:gaussian_blurred.raw gaussian_blurred_check.png
-        # Check if the PNG was created
         ls -l gaussian_blurred_check.png
 
     - name: Display build success message
