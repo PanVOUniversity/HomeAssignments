@@ -34,7 +34,6 @@
 
 #build
 */build
-*start
 .vscode
 *.orig
 
