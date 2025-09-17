@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "Running start_parallel..."
+if [[ -x ./start_parallel ]]; then
+    ./start_parallel
+else
+    echo "Error: ./start_parallel not found or not executable. Build it first (e.g., make)." >&2
+    exit 1
+fi
+
+echo "Running start_sequental (or start_sequential)..."
+if [[ -x ./start_sequental ]]; then
+    ./start_sequental
+elif [[ -x ./start_sequential ]]; then
+    ./start_sequential
+else
+    echo "Error: Neither ./start_sequental nor ./start_sequential found. Build it first (e.g., make)." >&2
+    exit 1
+fi
+
+echo "Done."
+
+
