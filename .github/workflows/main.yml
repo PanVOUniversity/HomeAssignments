@@ -21,6 +21,11 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y g++ make imagemagick # Install C++ compiler, make, and ImageMagick
     
+    - name: dive into folder
+      run: cd lab1/
+
+    - name: Clean previous builds
+      run: make clean # Ensure a clean build environment
 
     - name: Build sequential and parallel executables
       run: make # This will build both start_sequential and start_parallel as per your Makefile
