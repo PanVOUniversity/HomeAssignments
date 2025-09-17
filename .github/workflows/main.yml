@@ -3,10 +3,10 @@ name: C++ Image Processing Build Check
 on:
   push:
     branches:
-      - main # Trigger on pushes to the main branch
+      - HomeAssignments # Trigger on pushes to the main branch
   pull_request:
     branches:
-      - main # Trigger on pull requests to the main branch
+      - HomeAssignments # Trigger on pull requests to the main branch
 
 jobs:
   build:
