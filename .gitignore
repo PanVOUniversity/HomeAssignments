@@ -39,7 +39,9 @@
 *.orig
 
 #bin
-*.raw
+*ccwrotated.raw
+*cwrotated.raw
+*gaussian_blurred.raw
 
 #editheader
 *.py
