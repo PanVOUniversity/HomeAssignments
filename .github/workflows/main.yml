@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest # Use the latest Ubuntu environment
     defaults:
       run:
-        working-directory: lab1
+        working-directory: lab1/source
     steps:
     - name: Checkout code
       uses: actions/checkout@v4 # Action to check out your repository code
@@ -23,23 +23,18 @@ jobs:
         sudo apt-get update
         sudo apt-get install -y g++ make imagemagick # Install C++ compiler, make, and ImageMagick
     
-    - name: Clean previous builds
-      run: make clean # Ensure a clean build environment
+
 
     - name: Build sequential and parallel executables
       run: make # This will build both start_sequential and start_parallel as per your Makefile
 
-    - name: Run sequential version and check output
+    - name: Run all
       run: |
-        ./start_sequential
+        ./start
         # Check if output raw files were created
         ls -l cwrotated.raw ccwrotated.raw gaussian_blurred.raw
 
-    - name: Run parallel version and check output
-      run: |
-        ./start_parallel
-        # Check if output raw files were created
-        ls -l cwrotated.raw ccwrotated.raw gaussian_blurred.raw
+    
 
     - name: Verify image output with ImageMagick
       run: |
